@@ -3,7 +3,7 @@
 
 ## CMAKE를 이용한 외부 라이브러리 사용<br>
 - CMakeLists.txt에 다음을 추가(1)<br>
-  ```txt
+  ```
   # ExternalProject 관련 명령어 추가
   include(ExternalProject)
 
@@ -13,7 +13,7 @@
   set(DEP_LIB_DIR ${DEP_INSTALL_DIR}/lib)
   ```
 - CMakeLists.txt에 다음을 추가(2)<br>
-  ```txt
+  ```
   # spdlog: fast logger library
   ExternalProject_Add(
   dep-spdlog
