@@ -45,7 +45,7 @@
       target_compile_options(${PROJECT_NAME} PUBLIC /wd4819)
   endif()
   ```
-  Ctrl + S
+  Ctrl + S<br>
   F7
 
 - main.cpp 수정
