@@ -11,7 +11,7 @@ set(DEP_LIB_DIR ${DEP_INSTALL_DIR}/lib)
 ExternalProject_Add(
     dep-spdlog
     GIT_REPOSITORY "https://github.com/gabime/spdlog.git"
-    GIT_TAG "v2.x"
+    GIT_TAG "v1.13.0"
     GIT_SHALLOW 1
     UPDATE_COMMAND ""
     PATCH_COMMAND ""
