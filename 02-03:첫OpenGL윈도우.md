@@ -1,4 +1,4 @@
-# 02-03 : 첫 OpenGL 윈도<br>
+# 02-03 : 첫 OpenGL 윈도우<br>
 <br>
 
 ## GRAPHICS PIPELINE AND SHADER<br>
@@ -51,4 +51,10 @@
     ```cpp
     #include <glad.glad.h>
     ```
-    
+  + _Python_EXECUTABLE-NOTFOUND 오류 발생 시
+    > Python 설치<br>
+    > https://www.python.org<br>
+    > 시스템 환경 변수 편집 → 환경 변수 → Path<br>
+    > 새로 만들기 → 파이썬 실행폴더 경로 붙여 넣기
+    > C:\Users\"USERNAME"\AppData\Local\Programs\Python\Python312
+    > C:\Users\"USERNAME"\AppData\Local\Programs\Python\Python312\Scripts
