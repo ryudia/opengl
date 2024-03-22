@@ -72,4 +72,60 @@
     set(DEP_LIST ${DEP_LIST} dep_glfw)
     set(DEP_LIBS ${DEP_LIBS} glfw3)
     ```
+- GLFW로 윈도우를 생성하기
+  + CMakeLists.txt에 환경 변수 추가(1)
+    ```cmake
+    set(WINDOW_NAME "First OpenGL Example")
+    set(WINDOW_WIDTH 960)
+    set(WINDOW_HEIGHT 540)
+    ```
+  + CMakeLists.txt에 환경 변수 추가(2)
+    ```cmake
+    target_compile_definitions(${PROJECT_NAME} PUBLIC
+        WINDOW_NAME="${WINDOW_NAME}"
+        WINDOW_WIDTH=${WINDOW_WIDTH}
+        WINDOW_HEIGHT=${WINDOW_HEIGHT}
+        )
+    ```
+  + src/main.cpp를 다음과 같이 수정 (1)
+    ```cpp
+    #include <spdlog/spdlog.h>
+    #include <GLFW/glfw3.h>
+    
+    int main(int argc, const char** argv){
+        //시작을 알리는 로그
+        SPDLOG_INFO("Start program");
+        return 0;
+    }
+    ```
+  + src/main.cpp를 다음과 같이 수정 (2)
+    ```cpp
+    // glfw 라이브러리 초기화, 실패하면 에러 출력 후 종료
+    SPDLOG_INFO("Initialize glfw");
+    if (!glfwInit()) {
+        const char* description = nullptr;
+        glfwGetError(&description);
+        SPDLOG_ERROR("failed to initialize glfw: {}", description);
+        return -1;
+    }
+    ```
+  + src/main.cpp를 다음과 같이 수정 (3)
+    ```cpp
+    // glfw 윈도우 생성, 실패하면 에러 출력 후 종료
+    SPDLOG_INFO("Create glfw window");
+    auto window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_NAME, nullptr, nullptr);
+    if (!window) {
+        SPDLOG_ERROR("failed to icreate glfw window");
+        glfwTerminate();
+        return -1;
+    }
+    ```
+  + src/main.cpp를 다음과 같이 수정 (4)
+    ```cpp
+    // glfw 루프 실행, 윈도우 close 버튼을 누르면 정상 종료
+    SPDLOG_INFO("Start main loop");
+    while (!glfwWindowShouldClose(window)){
+        glfwPollEvents();
+    }
+    ```
 <br>
