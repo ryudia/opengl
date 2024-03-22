@@ -45,7 +45,11 @@
   + CMakeLists.txt
     > 내부 코드 사용 시 변경
   + Dependency.cmake
-    > 외부 라이브러리 사용 시 변경
+    > 외부 라이브러리 사용 시 변경<br>
+# 02-02 : CMake Dependency - GLFW<br>
+<br>
+
+## GLFW<br>
 - GLFW DEPENDENCY 추가하기
   + OpenGL은 3D 그래픽을 위한 API일 뿐(그림을 그리는 기능)
   + 화면에 그림을 그리기 위해서는 추가적인 작업이 필요함
